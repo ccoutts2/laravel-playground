@@ -16,6 +16,9 @@
                                 <input id="title" type="text" name="title" placeholder="Programmer" required class="block min-w-0 grow bg-white py-1.5 px-4 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6" />
                             </div>
                         </div>
+                        @error('title')
+                        <p class="text-red-500 text-xs mt-2">{{ $message}}</p>
+                        @enderror
                     </div>
 
                     <div class="sm:col-span-4">
@@ -26,9 +29,24 @@
                                 <input id="salary" type="text" name="salary" placeholder="$50K" required class="block min-w-0 grow bg-white py-1.5 px-4 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6" />
                             </div>
                         </div>
+                        @error('salary')
+                        <p class="text-red-500 text-xs mt-2">{{ $message}}</p>
+                        @enderror
                     </div>
                 </div>
-            </div>
+
+                {{-- <div class="mt-10">
+                    @if($errors->any())
+                    <ul>
+                        @foreach($errors->all() as $error)
+                        <li class="text-red-700 italic">{{ $error }} </li>
+                @endforeach
+                </ul>
+
+                @endif
+            </div> --}}
+
+        </div>
 
 
 
