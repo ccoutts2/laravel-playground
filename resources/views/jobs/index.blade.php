@@ -8,10 +8,10 @@
     </section>
     <ul class="space-y-4">
         @foreach ($jobs as $job)
-        <li key={{ $job['id']}}>
-            <a href="/jobs/{{ $job['id'] }}">
-                <span class="block space-y-2">{{ $job->employer['name'] }}</span>
-                <span><strong>{{ $job['title']}}:</strong> Pays {{ $job['salary'] }} per year</span>
+        <li key={{ $job->id}}>
+            <a href="/jobs/{{ $job->id }}">
+                <span class="block space-y-2">{{ $job->employer->name }}</span>
+                <span><strong>{{ $job->title}}:</strong> Pays {{ $job->salary }} per year</span>
             </a>
         </li>
         @endforeach
